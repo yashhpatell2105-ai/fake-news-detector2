@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRUTH - Fake News Detection System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🔍 TRUTH</div>
+            <span class="tagline">Detect Misinformation, Uncover Truth</span>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Fake News Detection System</h1>
+            <p>Use AI-powered analysis to verify news credibility and combat misinformation</p>
+        </section>
+
+        <section class="analysis-section">
+            <div class="input-panel">
+                <h2>Analyze News Content</h2>
+                
+                <div class="form-group">
+                    <label for="content">News Content *</label>
+                    <textarea id="content" placeholder="Paste the news article text here..." rows="8"></textarea>
+                    <span class="char-count"><span id="char-count">0</span>/5000</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="source-url">Source URL (Optional)</label>
+                        <input type="url" id="source-url" placeholder="https://example.com/article">
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author Name (Optional)</label>
+                        <input type="text" id="author" placeholder="John Doe">
+                    </div>
+                </div>
+
+                <button id="analyze-btn" class="btn-primary">Analyze Content</button>
+                <button id="extract-claims-btn" class="btn-secondary">Extract Claims</button>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Analyzing content...</p>
+            </div>
+
+            <div id="results" class="results-panel hidden">
+                <div class="results-header">
+                    <h2>Analysis Results</h2>
+                    <button id="close-results" class="btn-close">×</button>
+                </div>
+
+                <div id="overall-score" class="score-card">
+                    <div class="score-label">Overall Credibility Score</div>
+                    <div class="score-display">
+                        <div id="score-value" class="score-value">0%</div>
+                        <div id="score-bar" class="score-bar">
+                            <div id="score-fill" class="score-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div id="recommendation" class="recommendation"></div>
+                </div>
+
+                <div class="results-tabs">
+                    <button class="tab-btn active" data-tab="content">Content</button>
+                    <button class="tab-btn" data-tab="source">Source</button>
+                    <button class="tab-btn" data-tab="fact-check">Fact Check</button>
+                    <button class="tab-btn" data-tab="linguistic">Linguistic</button>
+                </div>
+
+                <div id="content-tab" class="tab-content active">
+                    <h3>Content Analysis</h3>
+                    <div id="content-details" class="details-grid"></div>
+                </div>
+
+                <div id="source-tab" class="tab-content">
+                    <h3>Source Credibility</h3>
+                    <div id="source-details" class="details-grid"></div>
+                </div>
+
+                <div id="fact-check-tab" class="tab-content">
+                    <h3>Fact Checking</h3>
+                    <div id="fact-check-details" class="details-grid"></div>
+                    <div id="claims-list" class="claims-list"></div>
+                </div>
+
+                <div id="linguistic-tab" class="tab-content">
+                    <h3>Linguistic Analysis</h3>
+                    <div id="linguistic-details" class="details-grid"></div>
+                </div>
+            </div>
+
+            <div id="error" class="error-panel hidden">
+                <div class="error-header">
+                    <h3>⚠ Error</h3>
+                    <button id="close-error" class="btn-close">×</button>
+                </div>
+                <p id="error-message"></p>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>How TRUTH Works</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="icon">🤖</div>
+                    <h3>NLP Analysis</h3>
+                    <p>Advanced natural language processing to detect linguistic patterns and writing styles associated with misinformation</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">🔐</div>
+                    <h3>Source Verification</h3>
+                    <p>Verify source credibility through domain analysis, SSL certificates, and known source databases</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">✓</div>
+                    <h3>Fact Checking</h3>
+                    <p>Real-time fact-checking against verified claim databases and multiple sources</p>
+                </div>
+                <div class="info-card">
+                    <div class="icon">📊</div>
+                    <h3>Accuracy Metrics</h3>
+                    <p>Detailed confidence scores and explainable analysis metrics for transparency</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 TRUTH - Fake News Detection System | Detect Misinformation, Uncover Truth</p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
