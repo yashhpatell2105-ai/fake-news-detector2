@@ -1,6 +1,9 @@
 // TRUTH - Fake News Detection System Frontend
 
-const API_BASE = '/api';
+// Use environment variable or default to relative /api for local development
+const API_BASE = window.API_BASE || (
+  window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api'
+);
 
 // DOM Elements
 const contentInput = document.getElementById('content');

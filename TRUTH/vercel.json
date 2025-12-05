@@ -1,0 +1,11 @@
+{
+  "buildCommand": "echo 'Frontend only - no build step needed'",
+  "outputDirectory": "frontend",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
